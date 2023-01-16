@@ -1,0 +1,70 @@
+<h1 class="text-center m-5">
+    Covid Vaccination System
+</h1>
+
+<div class="row ">
+    <div class="col-lg-4">
+
+        <div class="list-group text-center">
+            <h1 class="list-group-item list-group-item-action active bg-danger">Dose 1 </h1>
+            <div class="list-group-item pt-1" *ngFor="let item of availableList ; let i = index">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <h4>{{item.name}} <sub style="font-size: small;"> age:{{item.age}}</sub></h4>
+                    </div>
+                    <div class="col-2">
+                        <i type="button" (click)="addToDose1(i)" class="fa fa-check "
+                            style="float: right;font-size: xx-large;"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="list-group text-center">
+            <h1 class="list-group-item list-group-item-action active bg-warning">Dose 2 </h1>
+            <div class="list-group-item pt-1" *ngFor="let item of selectedList ; let i = index">
+                <div class="row">
+                    <div class="col-2">
+                        <i type="button" (click)="backToBoosterDose(i)" class="fa fa-trash-o "
+                            style="float: right;font-size: xx-large;"></i>
+                    </div>
+                    <div class="col-8">
+                        <h4>{{item.name}} <sub style="font-size: small;">Rs.{{item.Price}}</sub></h4>
+
+                    </div>
+                    <div class="col-2">
+                        <i type="button" (click)="addToDose2(i)" class="fa fa-check "
+                            style="float: right;font-size: xx-large;"></i>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="list-group text-center">
+            <h1 class="list-group-item list-group-item-action active bg-success"> Booster Dose </h1>
+            <div class="list-group-item pt-1" *ngFor="let item of bookedList ; let i = index">
+                <div class="row">
+                    <div class="col-2">
+
+                        <i type="button" (click)="backToDose1(i)" class="fa fa-trash-o "
+                            style="float: right;font-size: xx-large;"></i>
+                    </div>
+                    <div class="col-8">
+                        <h4>{{item.name}} <sub style="font-size: small;">Rs.{{item.Price}}</sub></h4>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
